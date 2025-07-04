@@ -1,8 +1,16 @@
 const express = require('express');
 const router = express.Router(); //express router is just for auth routes
 const user = require('../models/user.model.js');
+const rateLimit = require('express-rate-limit');
 
-router.post('/signup', async function (req, res){
+// Rate limiter for the signup route: max 10 requests per minute
+const signupLimiter = rateLimit({
+    windowMs: 1 * 60 * 1000, // 1 minute
+    max: 10, // Limit each IP to 10 requests per `window` (here, per minute)
+    message: { msg: 'Too many signup attempts from this IP, please try again after a minute' },
+});
+
+router.post('/signup', signupLimiter, async function (req, res){
     console.log(req.body);
     try{
         const {name, email, password} = req.body; //this request body should contain name, email and password
