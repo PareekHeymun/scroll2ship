@@ -10,7 +10,10 @@ router.post('/signup', async function (req, res){
             return res.status(400).json({msg: 'Please enter all the fields'});
         }
 
-        const existingUser = await user.findOne({ email });
+        if (typeof email !== 'string' || !email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+            return res.status(400).json({ msg: 'Invalid email format' });
+        }
+        const existingUser = await user.findOne({ email: { $eq: email } });
         if(existingUser){
             return res.status(400).json({msg: 'User already exists'});
         }
