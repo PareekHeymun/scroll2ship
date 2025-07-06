@@ -40,10 +40,13 @@ router.post('/signup', async function (req, res){
 router.post('/signin', async function(req, res){
     console.log(req.body);
     const {email, password} = req.body; //username and password then check for forgot email and forgot password
+    if (typeof email !== "string") {
+        return res.status(400).json({ msg: "Invalid email format" });
+    }
 
     try
     {
-        const getUser = await user.findOne({email}); //sanitize bro
+        const getUser = await user.findOne({ email: { $eq: email } }); //sanitize bro
         if(!getUser){
             res.status(400).json({msg: 'User not found, please signup to register as a user'});
         }
