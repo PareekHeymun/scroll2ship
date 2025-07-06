@@ -1,5 +1,7 @@
 require('dotenv').config();
 const authRoutes = require('./routes/auth.js');
+const productRoutes = require('./routes/products.js');
+
 const PORT = process.env.PORT || 3000;
 const database = require('./config/database.config.js');
 const userCollection = require('./models/user.model.js');
@@ -9,7 +11,12 @@ const app = express();
 
 app.use(express.json());
 app.use('/api/auth', authRoutes);
+app.use('/api/products', productRoutes);
 
+
+//Tests
+//require('./tests/integration/saving.product.test.js');
+//require('./tests/integration/find.product.test.js');
 // async function main() {
 //     const user_2 = new userCollection({
 //         name: 'Mithul',
