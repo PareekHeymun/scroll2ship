@@ -3,6 +3,7 @@ const router = express.Router(); //express router is just for auth routes
 const user = require('../models/user.model.js');
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
+const rateLimit = require('express-rate-limit');
 
 //signup is the same as registering a user
 router.post('/signup', async function (req, res){
@@ -37,7 +38,13 @@ router.post('/signup', async function (req, res){
 //first we will hash password and save that hash
 //next we will hash the username also and save it as a hash
 
-router.post('/signin', async function(req, res){
+const signinLimiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 100, // max 100 requests per windowMs
+    message: { msg: 'Too many login attempts, please try again later.' }
+});
+
+router.post('/signin', signinLimiter, async function(req, res){
     console.log(req.body);
     const {email, password} = req.body; //username and password then check for forgot email and forgot password
 
