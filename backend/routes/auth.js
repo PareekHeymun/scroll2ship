@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router(); //express router is just for auth routes
 const user = require('../models/user.model.js');
 const jwt = require('jsonwebtoken');
+const auth_middleware = require('../middleware/auth.middleware.js');
 require('dotenv').config();
 
 //signup is the same as registering a user
@@ -53,8 +54,10 @@ router.post('/signin', async function(req, res){
             return res.status(400).json({msg: 'Incorrect email or password'}); //confuse the user whether his username is incorrect or password :)
         }
         const payload_object = {
-            id: user.name,
-            role: user.role
+            id: getUser._id.toString(),
+            role: getUser.role.toString(),
+            name: getUser.name.toString(),
+            email: getUser.email.toString()
         }
         const secret_key = process.env.JWT_SECRET;
         const options_object = {expiresIn : '1h'};
@@ -68,6 +71,21 @@ router.post('/signin', async function(req, res){
         return res.status(500).send('Server error'); //we need to send server error message on our side, so please keep this in logs
     }
 
-})
+});
+
+router.post('/logout', auth_middleware, (req, res) => {
+    //user can log out only if it was logged in that means there must be a valid token
+    //to check that we use a post request to check the token
+    //if token is false, it returns status 400
+    res.json({msg: 'Logged out'});
+});
+
+router.get('/profile', auth_middleware, async (req, res) => {
+    //we will find the user from the token itself
+    if(!req.user.id){
+        return res.status(404).send('User not found');
+    }
+    return res.status(200).json(req.user);
+});
 
 module.exports = router;
