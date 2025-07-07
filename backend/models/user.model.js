@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
 /**
  * Schema: It helps to define the structure of the data in MongoDB Collections
  */
@@ -24,8 +25,15 @@ const userSchema = new Schema({
  * Export the user collection using module.exports
  */
 
-module.exports = mongoose.model('user', userSchema);
-userSchema.pre('save', function(next) {
-    //bcrypt for password hashing
+userSchema.pre('save', async function(next) {
+    if (this.isModified('password')){
+        this.password = await bcrypt.hash(this.password, 10);
+    }
     next();
 });
+
+userSchema.methods.checkPassword = async function (inputPassword){
+    //we need to get the corresponding password for that 
+    return bcrypt.compare(inputPassword, this.password);
+};
+module.exports = mongoose.model('user', userSchema);
