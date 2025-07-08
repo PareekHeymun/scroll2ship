@@ -5,7 +5,7 @@ const productRoutes = require('./routes/products.js');
 
 const PORT = process.env.PORT || 3000;
 
-const database = require('./config/database.config.js');
+require('./config/database.config.js');
 
 const userCollection = require('./models/user.model.js');
 
