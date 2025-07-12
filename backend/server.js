@@ -12,9 +12,10 @@ const userCollection = require('./models/user.model.js');
 const errhandler = require('./middleware/errhandler.middleware.js');
 
 const express = require('express');
+const rateLimit = require('./middleware/rateLimit.middleware.js');
 
 const app = express();
-
+app.use(rateLimit); // Apply rate limiting to all requests
 app.use(express.json());
 
 app.use('/api/auth', authRoutes);

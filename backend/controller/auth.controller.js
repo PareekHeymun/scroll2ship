@@ -1,83 +1,53 @@
-const user = require('../models/user.model.js');
+const userModel = require('../models/user.model');
 const jwt = require('jsonwebtoken');
-const signup = async function (req, res){
-    console.log(req.body);
-    try{
-        const {name, email, password} = req.body; //this request body should contain name, email and password
-        if(!name || !email || !password){
-            return res.status(400).json({msg: 'Please enter all the fields'});
-        }
+const { ApiError } = require('../utils/ApiError.util');
+const { asyncHandler } = require('../utils/asyncHandler.util');
 
-        const existingUser = await user.findOne({ email });
-        if(existingUser){
-            return res.status(400).json({msg: 'User already exists'});
-        }
-        const new_user = new user({name, email, password});
-
-        //either the promise is resolved or it is rejected
-        try{
-            await new_user.save();
-            return res.status(201).send('User registered successfully');
-        }
-        catch(err){console.log(err.message);}
-
-
+const signup = asyncHandler(async function (req, res){
+    const {name, email, password} = req.body;
+    if(!name || !email || !password){
+        throw new ApiError(400, 'Missing required fields');
     }
-    catch(err){
-        console.log(err.message);
-        // console.log(err);
-        return res.status(500).send('Server Error');
+    const existingUser = await userModel.findOne({ email });
+    if(existingUser){
+        throw new ApiError(400, 'User with this email already exists');
     }
-};
+    const new_user = new userModel({name, email, password});
+    await new_user.save();
+    res.status(201).json({msg: 'User registered successfully'});
+});
 
-const signin = async function(req, res){
-    console.log(req.body);
-    const {email, password} = req.body; //username and password then check for forgot email and forgot password
-
-    try
-    {
-        const getUser = await user.findOne({email}); //sanitize bro
-        if(!getUser){
-            res.status(400).json({msg: 'User not found, please signup to register as a user'});
-        }
-
-        const isMatch = await getUser.checkPassword(password);
-        if(!isMatch){
-            return res.status(400).json({msg: 'Incorrect email or password'}); //confuse the user whether his username is incorrect or password :)
-        }
-        const payload_object = {
-            id: getUser._id.toString(),
-            role: getUser.role.toString(),
-            name: getUser.name.toString(),
-            email: getUser.email.toString()
-        }
-        const secret_key = process.env.JWT_SECRET;
-        const options_object = {expiresIn : '1h'};
-
-        const GET_TOKEN = jwt.sign(payload_object, secret_key, options_object);
-        
-        return res.status(200).json({msg: 'Login Success', token: GET_TOKEN});
+const signin = asyncHandler(async function(req, res){
+    const {email, password} = req.body;
+    const getUser = await userModel.findOne({email});
+    if(!getUser){
+        throw new ApiError(400, 'User not found');
     }
-    catch(err){
-        console.log(err); //don't show error otherwise attacker can know which attack to use lol
-        return res.status(500).send('Server error'); //we need to send server error message on our side, so please keep this in logs
+    const isMatch = await getUser.checkPassword(password);
+    if(!isMatch){
+        throw new ApiError(400, 'Incorrect email or password');
     }
+    const payload_object = {
+        id: getUser._id.toString(),
+        role: getUser.role.toString(),
+        name: getUser.name.toString(),
+        email: getUser.email.toString()
+    }
+    const secret_key = process.env.JWT_SECRET;
+    const options_object = {expiresIn : '1h'};
+    const GET_TOKEN = jwt.sign(payload_object, secret_key, options_object);
+    res.status(200).json({msg: 'Login successful', token: GET_TOKEN});
+});
 
-}
+const logout = asyncHandler(async (req, res) => {
+    res.status(200).json({msg: 'Logout successful'});
+});
 
-const logout = (req, res) => {
-    //user can log out only if it was logged in that means there must be a valid token
-    //to check that we use a post request to check the token
-    //if token is false, it returns status 400
-    res.json({msg: 'Logged out'});
-}
-
-const profile = async (req, res) => {
-    //we will find the user from the token itself
+const profile = asyncHandler(async (req, res) => {
     if(!req.user.id){
-        return res.status(404).send('User not found');
+        throw new ApiError(404, 'User not found for provided token');
     }
-    return res.status(200).json(req.user);
-}
+    res.status(200).json({msg: 'Profile fetched successfully', user: req.user});
+});
 
 module.exports = {signup, signin, logout, profile};

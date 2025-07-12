@@ -1,24 +1,22 @@
-const getAllProducts = async(req, res) =>{
+const Product = require('../models/product.model');
+const { ApiError } = require('../utils/ApiError.util');
+const { asyncHandler } = require('../utils/asyncHandler.util');
+
+const getAllProducts = asyncHandler(async(req, res) =>{
     const products = await Product.find();
-    res.json(products);
-}
+    res.status(200).json({msg: 'Products fetched successfully', products});
+});
 
-const getSpecificProduct = async(req, res) => {
+const getSpecificProduct = asyncHandler(async(req, res) => {
     const product = await Product.findById(req.params.id);
-    if(!product) return res.status(400).json({msg: 'Product not found'});
-    res.json(product);
-}
+    if(!product) throw new ApiError(404, 'Product not found');
+    res.status(200).json({msg: 'Product fetched successfully', product});
+});
 
-const uploadTheProduct = async(req, res) =>{
-    //check for duplicate products also
-    console.log(req.body);
-
-    try{
-        await new Product(req.body).save();
-        res.status(200).send('Product Saved Successfully');
-    }catch(err){
-        res.status(400).send('Error uploading product');
-    }
-}
+const uploadTheProduct = asyncHandler(async(req, res) =>{
+    const product = new Product(req.body);
+    await product.save();
+    res.status(201).json({msg: 'Product uploaded successfully'});
+});
 
 module.exports = {getAllProducts, getSpecificProduct, uploadTheProduct};

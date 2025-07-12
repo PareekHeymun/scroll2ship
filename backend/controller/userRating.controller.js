@@ -1,29 +1,19 @@
 const UserRating = require('../models/userRating.model');
+const { ApiError } = require('../utils/ApiError.util');
+const { asyncHandler } = require('../utils/asyncHandler.util');
 
-exports.addRating = async (req, res) => {
-  try {
-    const rating = new UserRating({ ...req.body, user: req.user._id });
-    await rating.save();
-    res.status(201).json(rating);
-  } catch (err) {
-    res.status(400).json({ error: err.message });
-  }
-};
+exports.addRating = asyncHandler(async (req, res) => {
+  const rating = new UserRating({ ...req.body, user: req.user._id });
+  await rating.save();
+  res.status(201).json({ msg: 'Rating added successfully', rating });
+});
 
-exports.getRatingsForProduct = async (req, res) => {
-  try {
-    const ratings = await UserRating.find({ product: req.params.productId });
-    res.json(ratings);
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-};
+exports.getRatingsForProduct = asyncHandler(async (req, res) => {
+  const ratings = await UserRating.find({ product: req.params.productId });
+  res.status(200).json({ msg: 'Product ratings fetched successfully', ratings });
+});
 
-exports.getUserRatings = async (req, res) => {
-  try {
-    const ratings = await UserRating.find({ user: req.user._id });
-    res.json(ratings);
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-};
+exports.getUserRatings = asyncHandler(async (req, res) => {
+  const ratings = await UserRating.find({ user: req.user._id });
+  res.status(200).json({ msg: 'User ratings fetched successfully', ratings });
+});
