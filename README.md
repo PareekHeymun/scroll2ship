@@ -9,4 +9,4 @@
 - cd .. (come back to root)
 - now create .env and replicate .env.example
 - set port as 3000 preferably
-- npm start in the root of repo it will run frontend and backend folders concurrently
+- npm start in the root of repo it will run frontend and backend stuff concurrently
