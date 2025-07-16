@@ -4,15 +4,22 @@ const { ApiError } = require('../utils/ApiError.util');
 const { asyncHandler } = require('../utils/asyncHandler.util');
 
 const signup = asyncHandler(async function (req, res){
-    const {name, email, password} = req.body;
+    const {name, email, password, role} = req.body;
     if(!name || !email || !password){
         throw new ApiError(400, 'Missing required fields');
     }
+    
+    // Validate role
+    const validRoles = ['buyer', 'seller'];
+    if (role && !validRoles.includes(role)) {
+        throw new ApiError(400, 'Invalid role. Must be either "buyer" or "seller"');
+    }
+    
     const existingUser = await userModel.findOne({ email });
     if(existingUser){
         throw new ApiError(400, 'User with this email already exists');
     }
-    const new_user = new userModel({name, email, password});
+    const new_user = new userModel({name, email, password, role: role || 'buyer'});
     await new_user.save();
     res.status(201).json({msg: 'User registered successfully'});
 });
@@ -36,10 +43,19 @@ const signin = asyncHandler(async function(req, res){
     const secret_key = process.env.JWT_SECRET;
     const options_object = {expiresIn : '1h'};
     const GET_TOKEN = jwt.sign(payload_object, secret_key, options_object);
-    res.status(200).json({msg: 'Login successful', token: GET_TOKEN});
+    // Set JWT in HTTP-only cookie
+    res.cookie('token', GET_TOKEN, {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === 'production',
+        sameSite: 'strict',
+        maxAge: 60 * 60 * 1000 // 1 hour
+    });
+    res.status(200).json({msg: 'Login successful'});
 });
 
 const logout = asyncHandler(async (req, res) => {
+    // Clear the JWT cookie
+    res.clearCookie('token');
     res.status(200).json({msg: 'Logout successful'});
 });
 

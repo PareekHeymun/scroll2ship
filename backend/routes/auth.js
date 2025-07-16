@@ -9,7 +9,8 @@ router.post('/signup',
   [
     body('name').trim().escape(),
     body('email').isEmail().normalizeEmail(),
-    body('password').isLength({ min: 6 }).trim().escape()
+    body('password').isLength({ min: 6 }).trim().escape(),
+    body('role').optional().isIn(['buyer', 'seller']).withMessage('Role must be either "buyer" or "seller"')
   ],
   authController.signup
 );

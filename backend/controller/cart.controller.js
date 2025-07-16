@@ -1,20 +1,56 @@
-const Cart = require('../models/cart.model');
 const { ApiError } = require('../utils/ApiError.util');
 const { asyncHandler } = require('../utils/asyncHandler.util');
+const { 
+  getUserCart, 
+  addToCart, 
+  removeFromCart, 
+  updateCartQuantity,
+  calculateCartTotal 
+} = require('../utils/cartUtils');
 
 const findUserCart = asyncHandler(async (req, res) => {
-  const cart = await Cart.findOne({ userId: req.user.id }).populate('product.productId');
-  if (!cart) throw new ApiError(404, 'Cart not found');
-  res.status(200).json({msg: 'Cart fetched successfully', cart});
+  const cart = await getUserCart(req.user.id);
+  const total = calculateCartTotal(cart);
+  res.status(200).json({
+    msg: 'Cart fetched successfully', 
+    cart: { ...cart.toObject(), total }
+  });
 });
 
-const addToCart = asyncHandler(async (req, res) => {
+const addToCartHandler = asyncHandler(async (req, res) => {
   const { productId, quantity } = req.body;
-  let cart = await Cart.findOne({ userId: req.user.id });
-  if (!cart) cart = new Cart({ userId: req.user.id, products: [] });
-  cart.product.push({ productId, quantity });
-  await cart.save();
-  res.status(201).json({msg: 'Product added to cart successfully', cart});
+  const cart = await addToCart(req.user.id, productId, quantity);
+  const total = calculateCartTotal(cart);
+  res.status(201).json({
+    msg: 'Product added to cart successfully', 
+    cart: { ...cart.toObject(), total }
+  });
 });
 
-module.exports = {findUserCart, addToCart};
+const removeFromCartHandler = asyncHandler(async (req, res) => {
+  const { productId } = req.params;
+  const cart = await removeFromCart(req.user.id, productId);
+  const total = calculateCartTotal(cart);
+  res.status(200).json({
+    msg: 'Product removed from cart successfully', 
+    cart: { ...cart.toObject(), total }
+  });
+});
+
+const updateQuantityHandler = asyncHandler(async (req, res) => {
+  const { productId } = req.params;
+  const { quantity } = req.body;
+  const cart = await updateCartQuantity(req.user.id, productId, quantity);
+  const total = calculateCartTotal(cart);
+  res.status(200).json({
+    msg: 'Quantity updated successfully', 
+    cart: { ...cart.toObject(), total }
+  });
+});
+
+module.exports = {
+  findUserCart, 
+  addToCart: addToCartHandler, 
+  removeFromCart: removeFromCartHandler, 
+  updateQuantity: updateQuantityHandler
+};
