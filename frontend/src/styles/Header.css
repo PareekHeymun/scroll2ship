@@ -1,0 +1,46 @@
+div{
+    height:50px;
+    width:1170px;
+    margin:auto;
+    margin-top:20px;
+    position: relative;
+    display:flex;
+}
+button{
+    background: transparent;
+    border: transparent;
+    padding: 0;
+    position: absolute;
+    cursor: pointer;
+}
+.LogoTitle button{
+    position: static;
+}
+.LogoTitle {
+    display: flex;
+    align-items: center;
+    top:50%;
+    transform: translateY(-15%);
+    gap: 10px; 
+}
+.SearchBox{
+    height:parent;
+    width:260px;
+    position:absolute;
+    right: 90px;
+    display:flex;
+    flex-direction: row-reverse;
+    align-items: center ;
+    transform: translateY(-50%); 
+    background-color: #F5F5F5;
+}
+.SearchBox input{
+    height:50px;
+    width:260px;
+    background-color: transparent;
+    border: transparent;
+    font-size: 20px;
+}
+
+
+
