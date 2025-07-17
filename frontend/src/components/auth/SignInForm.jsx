@@ -18,7 +18,7 @@ export default function SignIn(){
                                 <img src={Title} alt="Title" height="150px" width="150px" />
                             </div>
                             <p style={{fontSize:"20px",marginBotton:"50px", transform:'translateY(-30px)'}}>Enter your details below</p>
-                            <input name="GmailId" placeholder='Email'/>
+                            <input type="email" name="GmailId" placeholder='Email'/>
                             <input type="password" name="Password" placeholder='Password'/>
                             <button id="SubmitButton"> Log In </button>
                             <span style={{marginTop:'20px'}}>
