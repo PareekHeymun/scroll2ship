@@ -4,17 +4,17 @@ import { CgProfile as ProfileButton} from "react-icons/cg";
 import { FaSearch as SearchIcon} from "react-icons/fa";
 import Logo from "../../assets/images/AppLogo3D.png";
 import Title from "../../assets/images/AppTitle3D.png";
-export function Header()
+export default function Header()
 {
     return (
         <>
-            <div>
+            <div className='HeaderPortion'>
                 <span className='LogoTitle'>
                     <button>
-                        <img src={Logo} alt="Logo" height={70} />
+                        <img src={Logo} alt="Logo" height={70}  />
                     </button>
                     <button>
-                        <img src={Title} alt="Title" height={200}/>
+                        <img src={Title} alt="Title" height={200} />
                     </button>
                 </span>
                 <button style={{right:45}}>

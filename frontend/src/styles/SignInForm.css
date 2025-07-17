@@ -1,0 +1,32 @@
+.Body{
+    margin-top: 60px;
+    width:100vw;
+    display:flex;
+}
+
+.SignInDetails{
+    height:400px;
+    width:400px;
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    transform: translateY(-80px);
+}
+
+.SignInDetails Input{
+    background: transparent;
+    border:transparent;
+    outline:none;
+    border-bottom: 2px solid #5b5b5b80;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+#SubmitButton{
+    background-color: #DB4444;
+    color:white;
+    position: relative;
+    height:56px;
+    width:143px;
+    border-radius: 10px;
+}
