@@ -2,6 +2,7 @@ import Header from '../common/Header';
 import Signin from "../../assets/images/SignIn.png";
 import '../../styles/SignInForm.css'
 import Title from '../../assets/images/AppTitle3D.png'
+import {Link} from 'react-router-dom'
 export default function SignIn(){
     return(
         <>
@@ -23,7 +24,7 @@ export default function SignIn(){
                             <button id="SubmitButton"> Log In </button>
                             <span style={{marginTop:'20px'}}>
                                 <p style={{display:'inline'}}>Don't have an account ?</p>
-                                <p style={{display:'inline',fontWeight:'bold',marginLeft:'10px', color:'#E07575', cursor:'pointer'}}>Sign Up</p>
+                                <Link to='/SignUp' style={{display:'inline',fontWeight:'bold',marginLeft:'10px', color:'#E07575', cursor:'pointer'}}>Sign Up</Link>
                             </span>
                         </div>
                     </div>
