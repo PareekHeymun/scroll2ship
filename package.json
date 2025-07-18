@@ -1,0 +1,26 @@
+{
+  "name": "scroll2ship",
+  "version": "1.0.0",
+  "description": "--- ## Add google docs --- A full-stack ecommerce platform built with React, Node.js, Express, and MongoDB. This project features a complete online shopping experience with user authentication, product management, shopping cart, payment integration, and an admin panel.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently \"npm start --prefix backend\" \"npm start --prefix frontend\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PareekHeymun/scroll2ship.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PareekHeymun/scroll2ship/issues"
+  },
+  "homepage": "https://github.com/PareekHeymun/scroll2ship#readme",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

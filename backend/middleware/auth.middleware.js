@@ -1,11 +1,13 @@
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
+const { ApiError } = require('../utils/ApiError.util');
 
-const authFunction =  function(req, res, next){
-    const token = req.header('Authorization')?.replace('Bearer ',''); //?. is optional chaining operator in Javascript
+const authFunction = function(req, res, next){
+    // Read token from HTTP-only cookie
+    const token = req.cookies?.token;
 
     if(!token) {
-        return  res.status(400).send('Invalid Authentication');
+        return next(new ApiError(400, 'Invalid Authentication'));
     }
     try{
         const decoded_verification_status = jwt.verify(token, process.env.JWT_SECRET);
@@ -14,7 +16,7 @@ const authFunction =  function(req, res, next){
         next();
     }catch(err){
         console.log(err);
-        return res.status(400).send(err.message);
+        return next(new ApiError(400, 'Invalid or expired token'));
     }
 }
 
