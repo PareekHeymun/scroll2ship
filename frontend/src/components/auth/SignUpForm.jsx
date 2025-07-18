@@ -1,5 +1,5 @@
 import Header from '../common/Header';
-import SignUp from "../../assets/images/SignUp.png";
+import SignIn from "../../assets/images/SignIn.png";
 import '../../styles/SignUpForm.css'
 import Title from '../../assets/images/AppTitle3D.png'
 export default function SignUpForm(){
@@ -9,7 +9,7 @@ export default function SignUpForm(){
                     <Header/>
                 </div>
                     <div className='Body'>
-                            <img src={SignUp} alt="Cart and Laptop" style={{height:"700px",width:"500px",marginLeft:"30px"}}/>
+                           <img src={SignIn} alt="Cart and Mobile" style={{height:"700px",width:"750px"}}/>
                             <div style={{height:"700px",width:"250px"}}/>
                             <div style={{height:"700px",width:"400px",display:'flex',alignItems:'center'}}>
                                 <div  className="SignUpDetails">
