@@ -2,24 +2,48 @@
     margin-top: 60px;
     width:100vw;
     display:flex;
+    margin-bottom: 100px;
+}
+.SignUpBox{
+    background-color:rgb(245, 245, 245);
+    border-radius:20px;
 }
 
+
+
 .SignUpDetails{
-    height:400px;
+    height:500px;
     width:400px;
     display:flex;
     flex-direction: column;
     justify-content:center;
+    align-items: center;
     transform: translateY(-80px);
 }
 
+.SignUpInput{
+    border: 2px solid #5b5b5b80;
+    height:40px;
+    width:360px;
+    border-radius: 10px;
+    margin-left:20px;
+    margin-bottom:20px;
+    position: relative;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 .SignUpDetails Input{
-    background: transparent;
+   background: transparent;
     border:transparent;
     outline:none;
-    border-bottom: 2px solid #5b5b5b80;
-    margin-bottom: 20px;
+    height:40px;
+    width:360px;
+    border-radius: 10px;
+    margin-left:20px;
     font-size: 16px;
+    position: absolute;
 }
 
 #SubmitButton{
@@ -29,4 +53,8 @@
     height:56px;
     width:143px;
     border-radius: 10px;
+}
+
+.SignUpInput:focus-within{
+   border: 3px solid #DB4444;
 }
