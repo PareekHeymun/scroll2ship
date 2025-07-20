@@ -2,6 +2,12 @@
     margin-top: 60px;
     width:100vw;
     display:flex;
+    margin-bottom: 100px;
+}
+
+.SignInBox{
+    background-color:rgb(245, 245, 245);
+    border-radius:20px;
 }
 
 .SignInDetails{
@@ -9,17 +15,34 @@
     width:400px;
     display:flex;
     flex-direction: column;
+    align-items: center;
     justify-content:center;
     transform: translateY(-80px);
 }
+.SignInInput{
+    border: 2px solid #5b5b5b80;
+    height:40px;
+    width:360px;
+    border-radius: 10px;
+    margin-left:20px;
+    margin-bottom:20px;
+    position: relative;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 
 .SignInDetails Input{
     background: transparent;
     border:transparent;
     outline:none;
-    border-bottom: 2px solid #5b5b5b80;
-    margin-bottom: 20px;
+    height:40px;
+    width:360px;
+    border-radius: 10px;
+    margin-left:20px;
     font-size: 16px;
+    position: absolute;
 }
 
 #SubmitButton{
@@ -27,6 +50,13 @@
     color:white;
     position: relative;
     height:56px;
-    width:143px;
     border-radius: 10px;
+    margin: 20px auto;
 }
+
+.SignInInput:focus-within{
+   border: 3px solid #DB4444;
+}
+
+
+
