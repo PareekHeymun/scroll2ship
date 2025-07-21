@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+#Caption{
+    transform: translateY(200px);
+    font-family: "Roboto Flex", sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+#Copyrights{
+    background-color:black;
+    color:gray;
+    text-align:center;
+    margin:0px;
+    position:absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
