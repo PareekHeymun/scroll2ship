@@ -16,7 +16,7 @@ export default function SignUpForm(){
                            <div style={{height:"700px",width:"400px"}}/>
                            <img src={SignUp} alt="Cart and Laptop" style={{height:"700px",width:"500px",borderRadius:"20px"}}/>
                             <div className="SignUpBox" style={{height:"700px",width:"400px",display:'flex',flexDirection:'column',gap:"60px",alignItems:'center'}}>
-                                <h1 style={{border:"solid 5px black",padding:"5px",paddingLeft:"15px",paddingRight:"15px",borderRadius:"20px"}}>Sign Up</h1>
+                                <h1>Sign Up</h1>
                                 <div  className="SignUpDetails">
                                     <div style={{display:'flex',flexDirection:'row', alignItems:'center', justifyContent:'Center'}}>
                                         <p style={{fontSize:"20px", fontFamily:"sans-serif", marginRight:"8px", transform:'translateY(-2px)'}}>Create Account to use  </p>

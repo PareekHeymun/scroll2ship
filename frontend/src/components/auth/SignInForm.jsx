@@ -16,7 +16,7 @@ export default function SignIn(){
                     <div style={{height:"700px",width:"200px"}}/>
                     <img src={Signin} alt="Cart and Mobile" style={{height:"700px",width:"750px",borderRadius:"20px",marginTop:"40px"}}/>
                     <div className="SignInBox" style={{width:"400px", display:'flex',flexDirection:'column',marginTop:"40px",gap:"60px", alignItems:'center', padding: '20px 0'}}>
-                        <h1 style={{border:"solid 5px black",padding:"5px",paddingLeft:"15px",paddingRight:"15px",borderRadius:"20px"}}>Login</h1>
+                        <h1>Login</h1>
                         <div  className="SignInDetails">
                             <div style={{display:'flex',flexDirection:'row', alignItems:'center', justifyContent:'Center'}}>
                                 <p style={{fontSize:"20px", fontFamily:"sans-serif", marginRight:"5px", transform:'translateY(-2px)'}}>Login to your </p>
