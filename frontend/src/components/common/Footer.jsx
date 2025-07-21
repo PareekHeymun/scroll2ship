@@ -5,7 +5,7 @@ export default function Footer(){
     const navigate=useNavigate();
     return(
         <>
-            <div style={{height:"1000px",width:"100%",backgroundColor:"black",color:"white",display:"flex",flexDirection:"column",border:"0",position:"relative"}}>
+            <div style={{height:"1200px",width:"100%",backgroundColor:"black",color:"white",display:"flex",flexDirection:"column",border:"0",position:"relative"}}>
                 <img src={AppLogo} alt="App Logo with Caption" height='250px' width='250px'style={{position:"absolute",left:"50%",transform:'translateX(-50%)'}}></img>
                 <p id="Caption">Your trusted online marketplace offering premium products with exceptional quality and service. We're committed to making shopping convenient, secure, and enjoyable for everyone.</p>
                 <nav style={{display:'flex',flexDirection:'Column',transform:"translate(30px,200px)"}}>
@@ -14,6 +14,9 @@ export default function Footer(){
                         <p>About</p>
                         <p>Our story</p>
                         <p>Home</p>
+                    </div>
+                    <div style={{height:"parent",display:'flex',flexDirection:'column',aligncontent:'center',justifyContent:'center'}}>
+                        <h1>Account</h1>
                         <p>Login/SignUp</p>
                         <p>Cart</p>
                         <p>Wishlist</p>
