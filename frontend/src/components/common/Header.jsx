@@ -5,6 +5,7 @@ import { FaSearch as SearchIcon} from "react-icons/fa";
 import Logo from "../../assets/images/AppLogo3D.png";
 import Title from "../../assets/images/AppTitle3D.png";
 import { useNavigate } from 'react-router-dom';
+import { CiHeart as HeartIcon} from "react-icons/ci";
 export default function Header()
 {
     const navigate=useNavigate();
