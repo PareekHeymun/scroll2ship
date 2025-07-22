@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+.ErrorPageBody{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height:600px;
+}
+
+.ErrorPageBody h1,h3{
+    color:#DB4444;
+}
+
+.ErrorPageBody h1{
+    font-size: 80px;
+    margin-bottom: 0px;
+    animation:pulse 2s ease-in-out infinite alternate ;
+}
+.ErrorPageBody h3{
+    font-size: 30px;
+    margin-top: 0px;
+}
+
+.ErrorPageBody p{
+    font-size: 20px;
+    font-family: "Roboto Flex", sans-serif;
+}
+
+.ErrorPageBody button{
+    position: relative;
+    background-color: #DB4444;
+    margin-top: 20px;
+    color:white;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    width:200px;
+    height: 40px;
+    box-shadow: 0px 0px 15px rgba(255, 42, 42, 0.6);
+}
+.ErrorPageBody button:hover{
+    transform:scale(1.02);
+}
+ 
+@keyframes pulse{
+    0% {transform: scale(1);}
+    100% {transform: scale(1.1);}
+}
