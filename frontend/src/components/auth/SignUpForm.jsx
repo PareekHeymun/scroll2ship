@@ -6,7 +6,9 @@ import Title from '../../assets/images/AppTitle3D.png'
 import { IoPerson as NameIcon} from "react-icons/io5";
 import { MdOutlineEmail as MailIcon } from "react-icons/md";
 import { FaLock as Lock} from "react-icons/fa";
+import { useNavigate } from 'react-router-dom';
 export default function SignUpForm(){
+    const Navigate=useNavigate();
     return(
             <>
                 <div>
@@ -19,15 +21,21 @@ export default function SignUpForm(){
                                 <h1>Sign Up</h1>
                                 <div  className="SignUpDetails">
                                     <div style={{display:'flex',flexDirection:'row', alignItems:'center', justifyContent:'Center'}}>
-                                        <p style={{fontSize:"20px", fontFamily:"sans-serif", marginRight:"8px", transform:'translateY(-2px)'}}>Create Account to use  </p>
-                                        <img src={Title} alt="Title" height="125px" width="125px" />
+                                        <p style={{fontSize:"20px", fontFamily:"sans-serif", marginRight:"2px"}}>Create Account to use  </p>
+                                        <img src={Title} alt="Title" height="20px" width="120px" />
                                     </div>
                                     <p style={{fontSize:"20px",marginBotton:"50px", transform:'translateY(-30px)'}}>Enter your details below</p>
                                     <form autoComplete="off">
-                                        <div className='SignUpInput'>
-                                            <NameIcon size={20} style={{color:'#888'}}/>
-                                            <input name="Name" placeholder='Name'/>
-                                        </div>
+                                        <div style={{display:'flex',flexDirection:'row'}}>
+                                                        <div className='SignUpInput' style={{width:'170px'}}>
+                                                            < NameIcon size={20} style={{color:'#888'}}/>
+                                                            <input name="FirstName" placeholder='First Name'/>
+                                                        </div>
+                                                        <div className='SignUpInput' style={{width:'170px'}}>
+                                                            <NameIcon size={20} style={{color:'#888'}}/>
+                                                            <input name="LastName" placeholder='Last Name'/>
+                                                        </div>
+                                                    </div>
                                         <div className='SignUpInput'>
                                             <MailIcon size={20} style={{color:'#888'}}/>
                                             <input type="email" name="GmailId" placeholder='Email'/>
@@ -41,7 +49,7 @@ export default function SignUpForm(){
                                     <button id="SubmitButton" style={{fontSize:"15px",fontWeight:"bold"}}> Sign Up </button>
                                     <span style={{marginTop:'20px'}}>
                                         <p style={{display:'inline'}}>Become a seller by</p>
-                                        <p style={{display:'inline',fontWeight:'bold',marginLeft:'8px', color:'#E07575', cursor:'pointer'}}>Registering here</p>
+                                        <p onClick={()=>Navigate('/RegistrationForm')} style={{display:'inline',fontWeight:'bold',marginLeft:'8px', color:'#E07575', cursor:'pointer'}}>Registering here</p>
                                     </span>
                                 </div>
                             </div>

@@ -15,13 +15,13 @@ export default function SignIn(){
             <div className='Body'>
                     <div style={{height:"700px",width:"200px"}}/>
                     <img src={Signin} alt="Cart and Mobile" style={{height:"700px",width:"750px",borderRadius:"20px",marginTop:"40px"}}/>
-                    <div className="SignInBox" style={{width:"400px", display:'flex',flexDirection:'column',marginTop:"40px",gap:"60px", alignItems:'center', padding: '20px 0'}}>
+                    <div className="SignInBox" style={{}}>
                         <h1>Login</h1>
                         <div  className="SignInDetails">
                             <div style={{display:'flex',flexDirection:'row', alignItems:'center', justifyContent:'Center'}}>
-                                <p style={{fontSize:"20px", fontFamily:"sans-serif", marginRight:"5px", transform:'translateY(-2px)'}}>Login to your </p>
-                                <img src={Title} alt="Title" height="100px" width="100px"  />
-                                <p style={{fontSize:"20px", fontFamily:"sans-serif", marginLeft:"5px", transform:'translateY(-2px)'}}>account</p>
+                                <p style={{fontSize:"20px", fontFamily:"sans-serif", marginRight:"2px"}}>Login to your </p>
+                                <img src={Title} alt="Title" height="20px" width="120px"  />
+                                <p style={{fontSize:"20px", fontFamily:"sans-serif", marginLeft:"2px"}}>account</p>
                             </div>
                             <p style={{fontSize:"20px",marginBottom:"10px", transform:'translateY(-30px)'}}>Enter your details below</p>
                             <form autoComplete="off">
@@ -37,7 +37,7 @@ export default function SignIn(){
                             <button id="SubmitButton" style={{fontSize:"15px",fontWeight:"bold"}}> Log In </button>
                             <span style={{marginTop:'20px'}}>
                                 <p style={{display:'inline'}}>Don't have an account ?</p>
-                                <Link to='/SignUp' style={{display:'inline',fontWeight:'bold',marginLeft:'10px', color:'#E07575', cursor:'pointer'}}>Sign Up</Link>
+                                <Link id="SignUpLink" to='/SignUp'>Sign Up</Link>
                             </span>
                         </div>
                     </div>
