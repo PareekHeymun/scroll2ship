@@ -16,3 +16,8 @@
     left: 50%;
     transform: translateX(-50%);
 }
+
+nav p:hover{
+    transform: translateX(5px);
+    color:#DB4444;
+}
