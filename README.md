@@ -7,6 +7,6 @@
 - cd backend > npm install
 - cd frontend > npm install
 - cd .. (come back to root)
-- now create .env and replicate .env.example
+- now create .env and replicate .env.example in appropriate folders like backend
 - backend works on port 4000 while frontend runs on port 3000
 - npm start in the root of repo it will run frontend and backend stuff concurrently
