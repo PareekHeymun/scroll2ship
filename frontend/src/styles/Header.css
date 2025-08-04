@@ -47,5 +47,9 @@ button:hover{
     transform: scale(1.1);
 }
 
+.LogoTitle button:hover{
+    transform: scale(1);
+}
+
 
 

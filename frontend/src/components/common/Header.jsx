@@ -14,20 +14,20 @@ export default function Header()
             <div className='HeaderPortion'>
                 <span className='LogoTitle'>
                     <button onClick={()=>navigate('/')}>
-                        <img src={Logo} alt="Logo" height={70}  />
+                        <img src={Logo} alt="Logo" height={50}  />
                     </button>
                     <button onClick={()=>navigate('/')}>
-                        <img src={Title} alt="Title" height={50} />
+                        <img src={Title} alt="Title" height={35} />
                     </button>
                 </span>
                 <button onClick={()=>navigate('/Wishlist')} style={{right:90}}>
-                    <HeartIcon size={35}/>
+                    <HeartIcon size={30}/>
                 </button>
                 <button onClick={()=>navigate('/Cart')} style={{right:45}}>
-                    <CartButton size={35}/>
+                    <CartButton size={30}/>
                 </button>
                 <button onClick={()=>navigate('/SignIn')} style={{right:0}}>
-                    <ProfileButton size={35}/>   
+                    <ProfileButton size={30}/>   
                 </button>
                 <div className='SearchBox' >
                     <input name='SearchInput' id='searchinput' placeholder='Search' autoComplete='off'/>

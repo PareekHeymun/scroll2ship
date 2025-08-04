@@ -20,4 +20,5 @@
 nav p:hover{
     transform: translateX(5px);
     color:#DB4444;
+    cursor:pointer;
 }

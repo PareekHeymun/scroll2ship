@@ -6,7 +6,8 @@
 }
 .SignUpBox{
     background-color:rgb(245, 245, 245);
-    border-radius:20px;
+    border-top-right-radius:20px;
+    border-bottom-right-radius:20px;
 }
 
 
@@ -25,7 +26,8 @@
     border: 2px solid #5b5b5b80;
     height:40px;
     width:360px;
-    border-radius: 10px;
+    padding: 10px;
+    border-radius: 7px;
     margin-left:20px;
     margin-bottom:20px;
     position: relative;
@@ -41,24 +43,15 @@
     height:40px;
     width:360px;
     border-radius: 10px;
-    margin-left:20px;
+    margin-left:30px;
     font-size: 16px;
     position: absolute;
 }
 
-#SubmitButton{
-    background-color: #DB4444;
-    color:white;
-    position: relative;
-    height:56px;
-    width:143px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 15px rgba(255, 42, 42, 0.6);
-}
+
 
 .SignUpInput:focus-within{
    border: 3px solid #DB4444;
-   box-shadow: 0px 0px 15px rgba(255, 42, 42, 0.6);
 }
 
 #SubmitButton:hover{
