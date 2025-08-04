@@ -1,6 +1,6 @@
-import Header from '../common/Header';
 import Footer from '../common/Footer';
 import Signin from "../../assets/images/SignIn.png";
+import Button from '../common/Button'
 import '../../styles/SignInForm.css'
 import Title from '../../assets/images/AppTitle3D.png'
 import { MdOutlineEmail as MailIcon } from "react-icons/md";
@@ -9,12 +9,9 @@ import {Link} from 'react-router-dom'
 export default function SignIn(){
     return(
         <>
-            <div>
-                <Header/>
-            </div>
             <div className='Body'>
-                    <div style={{height:"700px",width:"200px"}}/>
-                    <img src={Signin} alt="Cart and Mobile" style={{height:"700px",width:"750px",borderRadius:"20px",marginTop:"40px"}}/>
+                    <div style={{height:"500px",width:"350px"}}/>
+                    <img src={Signin} alt="Cart and Mobile" style={{height:"600px",width:"500px",borderTopLeftRadius:"20px",borderBottomLeftRadius:"20px",marginTop:"40px"}}/>
                     <div className="SignInBox" style={{}}>
                         <h1>Login</h1>
                         <div  className="SignInDetails">
@@ -34,7 +31,7 @@ export default function SignIn(){
                                     <input type="password" name="Password" placeholder='Password'/>
                                 </div>
                             </form>
-                            <button id="SubmitButton" style={{fontSize:"15px",fontWeight:"bold"}}> Log In </button>
+                            <Button text="Sign In"/>
                             <span style={{marginTop:'20px'}}>
                                 <p style={{display:'inline'}}>Don't have an account ?</p>
                                 <Link id="SignUpLink" to='/SignUp'>Sign Up</Link>

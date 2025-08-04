@@ -1,7 +1,7 @@
-import Header from "../common/Header";
 import Footer from "../common/Footer";
 import "../../styles/RegistrationForm.css";
 import Register from "../../assets/images/Register.png";
+import Button from "../common/Button";
 import { IoPerson as NameIcon } from "react-icons/io5";
 import { MdOutlineEmail as MailIcon } from "react-icons/md";
 import { FaLock as Lock, FaPhoneAlt as PhoneIcon } from "react-icons/fa";
@@ -11,13 +11,12 @@ import { MdPlace as LocationIcon} from "react-icons/md";
 export default function RegistrationForm() {
   return (
     <>
-      <Header />
       <div className="Body">
         <div style={{ height: "700px", width: "400px" }} />
         <img
           src={Register}
           alt="Cart and Laptop"
-          style={{ height: "700px", width: "400px", borderRadius: "20px" }}
+          style={{ height: "700px", width: "400px", borderTopLeftRadius:"20px",borderBottomLeftRadius:"20px"}}
         />
         <div
           className="RegisterBox"
@@ -52,11 +51,11 @@ export default function RegistrationForm() {
             </div>
             <form autoComplete="off">
               <div style={{ display: "flex", flexDirection: "row" }}>
-                <div className="RegisterInput" style={{ width: "180px" }}>
+                <div className="RegisterInput" style={{ width: "170px" }}>
                   <NameIcon size={20} style={{ color: "#888" }} />
                   <input name="FirstName" placeholder="First Name" />
                 </div>
-                <div className="RegisterInput" style={{ width: "180px" }}>
+                <div className="RegisterInput" style={{ width: "170px" }}>
                   <NameIcon size={20} style={{ color: "#888" }} />
                   <input name="LastName" placeholder="Last Name" />
                 </div>
@@ -83,13 +82,7 @@ export default function RegistrationForm() {
               </div>
             </form>
 
-            <button
-              id="SubmitButton"
-              style={{ fontSize: "15px", fontWeight: "bold" }}
-            >
-              {" "}
-              Register{" "}
-            </button>
+            <Button text="Register" />
           </div>
         </div>
       </div>
