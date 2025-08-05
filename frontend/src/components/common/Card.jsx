@@ -1,9 +1,15 @@
 import "../../styles/Card.css";
 import { FaRegHeart as HeartIcon} from "react-icons/fa";
-export default function ProductCard({ image, name, price, description }) {
+import {useNavigate} from "react-router-dom"
+import SignIn from "../../assets/images/SignIn.png"
+export default function ProductCard({id,image=SignIn, name, price, description }) {
+  const navigate=useNavigate()
+  const handleClick = () => {
+    navigate(`/product/${id}`);
+  };
   return (
     <>
-      <div className="card">
+      <div className="card" onClick={handleClick}>
         <div className="Image">
             <img alt={name} src={image} height="200px" width="200px"/>
             <button>
@@ -12,7 +18,7 @@ export default function ProductCard({ image, name, price, description }) {
         </div>
         <div style={{ display: "flex", justifyContent:"space-between" }}>
           <p className="ProductName">{name}</p>
-          <p>{price}</p>
+          <p>₹{price}</p>
         </div>
         <p>{description}</p>
       </div>

@@ -2,6 +2,7 @@
 #Caption{
     transform: translateY(200px);
     font-family: "Roboto Flex", sans-serif;
+    font-size:16px;
     font-weight: bold;
     text-align: center;
 }
