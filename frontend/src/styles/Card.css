@@ -20,5 +20,11 @@ p{
     width: 200px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    overflow: hidden;
     position: relative;
+}
+.card:hover{
+    transform: scale(1.05);
+    box-shadow: 0px 0px 20px #DB4444;
+    cursor: pointer;
 }
