@@ -1,5 +1,5 @@
 # Project Title
-**Scroll 2 Ship**
+**Scroll 2 Ship** \
 An Ecommerce website to make shopping experience better
 
 # Screenshots
@@ -21,7 +21,7 @@ An Ecommerce website to make shopping experience better
 ### Landing Page
 
 **Greets the user:**
-If logged in → "Hello, [Name]"
+If logged in → "Hello, [Name]" \
 If not logged in → "Hello Bro"
 
 **Displays product data fetched from the database.**
