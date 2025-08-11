@@ -19,28 +19,28 @@
 ## Frontend features
 ### Landing Page
 
-Greets the user:
+**Greets the user:**
 If logged in → "Hello, [Name]"
 If not logged in → "Hello Bro"
 
-Displays product data fetched from the database.
+**Displays product data fetched from the database.**
 
-Navigation:
+**Navigation:**
 Logo/Title → Landing Page
 Heart Icon → Wishlist Page
 Cart Icon → Cart Page
 Profile Icon → Sign-in Page
 
 ### Authentication
-Sign In:
+**Sign In:**
 User enters credentials → Sent to backend → Verified → Logged in.
 
-Sign Up:
+**Sign Up:**
 New users can register.
 
 After successful registration → Redirected to Sign-in Page.
 
-Validation:
+**Validation:**
 Performed at both Sign-in and Sign-up stages.
 
 ### seller registration
@@ -49,12 +49,64 @@ Sellers can register via a dedicated registration page by providing required det
 ### Footer navigation
 Clicking footer links navigates to corresponding pages.
 
-### Technology
-Implemented using React.js.
+
 
 ## Backend features
+### User Authentication & Authorization
 
-### To execute and check the current repo
+**Sign Up**
+
+Accepts email and password from frontend.
+Password is hashed using a secure hashing algorithm (bcrypt) before storing in MongoDB.
+
+**Sign In**
+Validates user credentials.
+Generates a JWT (JSON Web Token) on successful login.
+Stores the JWT in an HTTP-only cookie to maintain session security.
+
+**Protected Routes**
+Middleware verifies JWT token from cookies for restricted actions (e.g., adding products).
+
+## User Data Management
+Stores basic user profile info (currently only email & hashed password).
+Fetches user details for authenticated sessions.
+Can be extended in future to store more user attributes (name, address, preferences).
+
+## Product Management
+Add Product 
+Seller can upload product details (title, description, price, category, etc.) to MongoDB.
+Get All Products (for displaying to users).
+
+## Security
+Passwords are stored hashed — no plain text storage.
+JWTs stored in HTTP-only cookies to prevent XSS attacks.
+Middleware to prevent unauthorized data access.
+
+## DataBase
+Stores:
+Users collection → email, hashed password, role (buyer/seller if needed in future).
+Products collection → product details, seller reference.
+
+# Technologies/Libraries/Packages Used
+ ## Frontend
+   React.js
+   Css
+   React Router DOM
+   Axios
+   React Icons
+
+## Backend
+  Node.js
+  MongoDB
+  Express.js
+  Mongoose
+  bcrypt 
+  jsonwebtoken (JWT) 
+  cookie-parser
+  dotenv
+
+# Local Setup
+
 - install nodejs from nvm
 - install git or use visual studio's inbuilt-git
 - clone the repo
@@ -66,3 +118,8 @@ Implemented using React.js.
 - now create .env and replicate .env.example in appropriate folders like backend
 - backend works on port 4000 while frontend runs on port 3000
 - npm start in the root of repo it will run frontend and backend stuff concurrently
+
+- # Team members
+- ### Nama Mithul (2024IMT-052)
+- ### Heymun Pareek (2024IMT-029)
+- ### Shubham Prasad (2024IMT-503)
