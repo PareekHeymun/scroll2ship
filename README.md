@@ -37,7 +37,7 @@ Profile Icon → Sign-in Page
 User enters credentials → Sent to backend → Verified → Logged in.
 
 **Sign Up:**
-New users can register. \
+New users can register. 
 
 After successful registration → Redirected to Sign-in Page.
 
@@ -71,7 +71,7 @@ Middleware verifies JWT token from cookies for restricted actions (e.g., adding 
 ## User Data Management
 Stores basic user profile info (currently only email & hashed password). \
 Fetches user details for authenticated sessions. \
-Can be extended in future to store more user attributes (name, address, preferences). \
+Can be extended in future to store more user attributes (name, address, preferences). 
 
 ## Product Management
 Add Product \
@@ -81,7 +81,7 @@ Get All Products (for displaying to users).
 ## Security
 Passwords are stored hashed — no plain text storage. \
 JWTs stored in HTTP-only cookies to prevent XSS attacks. \
-Middleware to prevent unauthorized data access. \
+Middleware to prevent unauthorized data access. 
 
 ## DataBase
 Stores: \
@@ -90,11 +90,11 @@ Products collection → product details, seller reference.
 
 # Technologies/Libraries/Packages Used
  ## Frontend
-   React.js \
-   Css \ 
-   React Router DOM \
-   Axios \
-   React Icons 
+   - React.js 
+   - Css 
+   - React Router DOM 
+   - Axios 
+   - React Icons 
 
 ## Backend
   Node.js \
