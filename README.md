@@ -97,14 +97,14 @@ Products collection → product details, seller reference.
    - React Icons 
 
 ## Backend
-  Node.js \
-  MongoDB \
-  Express.js \
-  Mongoose \
-  bcrypt  \
-  jsonwebtoken (JWT)  \
-  cookie-parser \
-  dotenv 
+  - Node.js 
+  - MongoDB 
+  - Express.js 
+  - Mongoose 
+  - bcrypt  
+  - jsonwebtoken (JWT)  
+  - cookie-parser 
+  - dotenv 
 
 # Local Setup
 
