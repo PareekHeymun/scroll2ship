@@ -1,7 +1,7 @@
-#Project Title
+# Project Title
 **Scroll 2 Ship**
 
-#Screenshots
+# Screenshots
 <img width="1919" height="989" alt="Screenshot 2025-08-11 195043" src="https://github.com/user-attachments/assets/b4820cca-a336-4853-9dd1-774c958c5252" />
 <img width="1838" height="670" alt="Screenshot 2025-08-11 210257" src="https://github.com/user-attachments/assets/1d0b4ea7-3ccb-4edc-8a36-0520f322a732" />
 <img width="1895" height="959" alt="Screenshot 2025-08-11 210316" src="https://github.com/user-attachments/assets/988411ec-9ed9-4a81-8425-5bce180b46cd" />
@@ -15,9 +15,9 @@
 <img width="1893" height="936" alt="Screenshot 2025-08-11 210618" src="https://github.com/user-attachments/assets/2918b6e3-d2c7-49f7-b45b-46ac2c893803" />
 <img width="1893" height="969" alt="Screenshot 2025-08-11 210629" src="https://github.com/user-attachments/assets/20b18b50-034b-47a2-9615-69dd537d88e3" />
 
-#Features implemented
-##Frontend features
-###Landing Page
+# Features implemented
+## Frontend features
+### Landing Page
 
 Greets the user:
 If logged in → "Hello, [Name]"
@@ -31,7 +31,7 @@ Heart Icon → Wishlist Page
 Cart Icon → Cart Page
 Profile Icon → Sign-in Page
 
-###Authentication
+### Authentication
 Sign In:
 User enters credentials → Sent to backend → Verified → Logged in.
 
@@ -43,16 +43,16 @@ After successful registration → Redirected to Sign-in Page.
 Validation:
 Performed at both Sign-in and Sign-up stages.
 
-###seller registration
+### seller registration
 Sellers can register via a dedicated registration page by providing required details.
 
-###Footer navigation
+### Footer navigation
 Clicking footer links navigates to corresponding pages.
 
-###Technology
+### Technology
 Implemented using React.js.
 
-##Backend features
+## Backend features
 
 ### To execute and check the current repo
 - install nodejs from nvm
