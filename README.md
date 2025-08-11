@@ -1,6 +1,15 @@
-<img width="1919" height="989" alt="Screenshot 2025-08-11 195043" src="https://github.com/user-attachments/assets/ccff8ebe-dbd5-4632-9993-0a72e36472f0" />
-<img width="1896" height="941" alt="Screenshot 2025-08-11 210415" src="https://github.com/user-attachments/assets/35979d15-1bb9-4c78-afaf-2dd9ca6df96a" />
-
+<img width="1919" height="989" alt="Screenshot 2025-08-11 195043" src="https://github.com/user-attachments/assets/b4820cca-a336-4853-9dd1-774c958c5252" />
+<img width="1838" height="670" alt="Screenshot 2025-08-11 210257" src="https://github.com/user-attachments/assets/1d0b4ea7-3ccb-4edc-8a36-0520f322a732" />
+<img width="1895" height="959" alt="Screenshot 2025-08-11 210316" src="https://github.com/user-attachments/assets/988411ec-9ed9-4a81-8425-5bce180b46cd" />
+<img width="1894" height="965" alt="Screenshot 2025-08-11 210331" src="https://github.com/user-attachments/assets/dc658044-8632-4f8b-8e22-c87783a77630" />
+<img width="1896" height="941" alt="Screenshot 2025-08-11 210415" src="https://github.com/user-attachments/assets/697e9c64-4b68-4676-ab49-0eefb6bda158" />
+<img width="1896" height="966" alt="Screenshot 2025-08-11 210457" src="https://github.com/user-attachments/assets/fafefdf7-1366-4cb8-9b32-79964fabe144" />
+<img width="1893" height="966" alt="Screenshot 2025-08-11 210516" src="https://github.com/user-attachments/assets/90a26900-bb2e-4947-94a4-97f6b2058b21" />
+<img width="1896" height="955" alt="Screenshot 2025-08-11 210527" src="https://github.com/user-attachments/assets/c9ead2b1-e9da-417a-b824-1de6b7d6e170" />
+<img width="1892" height="963" alt="Screenshot 2025-08-11 210549" src="https://github.com/user-attachments/assets/78692a67-0ad0-41d1-8dcf-b796676a3e8c" />
+<img width="1892" height="939" alt="Screenshot 2025-08-11 210607" src="https://github.com/user-attachments/assets/5a0d7994-ab72-4ca4-934a-537b33d00b4e" />
+<img width="1893" height="936" alt="Screenshot 2025-08-11 210618" src="https://github.com/user-attachments/assets/2918b6e3-d2c7-49f7-b45b-46ac2c893803" />
+<img width="1893" height="969" alt="Screenshot 2025-08-11 210629" src="https://github.com/user-attachments/assets/20b18b50-034b-47a2-9615-69dd537d88e3" />
 
 
 ### To execute and check the current repo
