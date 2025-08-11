@@ -1,5 +1,6 @@
 # Project Title
 **Scroll 2 Ship**
+An Ecommerce website to make shopping experience better
 
 # Screenshots
 <img width="1919" height="989" alt="Screenshot 2025-08-11 195043" src="https://github.com/user-attachments/assets/b4820cca-a336-4853-9dd1-774c958c5252" />
