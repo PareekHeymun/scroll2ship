@@ -1,0 +1,10 @@
+@keyframes pulse{
+    0% {transform: scale(1);}
+    100% {transform: scale(1.1);}
+}
+
+.pulse {
+display: inline-block;
+  transform-origin: center;
+  animation: pulse 1s ease-in-out infinite alternate ;
+}
