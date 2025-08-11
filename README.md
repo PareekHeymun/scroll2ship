@@ -27,17 +27,17 @@ If not logged in → "Hello Bro"
 **Displays product data fetched from the database.**
 
 **Navigation:**
-Logo/Title → Landing Page
-Heart Icon → Wishlist Page
-Cart Icon → Cart Page
-Profile Icon → Sign-in Page
+Logo/Title → Landing Page \
+Heart Icon → Wishlist Page \
+Cart Icon → Cart Page \
+Profile Icon → Sign-in Page \
 
 ### Authentication
 **Sign In:**
 User enters credentials → Sent to backend → Verified → Logged in.
 
 **Sign Up:**
-New users can register.
+New users can register. \
 
 After successful registration → Redirected to Sign-in Page.
 
