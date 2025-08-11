@@ -30,7 +30,7 @@ If not logged in → "Hello Bro"
 Logo/Title → Landing Page \
 Heart Icon → Wishlist Page \
 Cart Icon → Cart Page \
-Profile Icon → Sign-in Page \
+Profile Icon → Sign-in Page 
 
 ### Authentication
 **Sign In:**
@@ -57,54 +57,54 @@ Clicking footer links navigates to corresponding pages.
 
 **Sign Up**
 
-Accepts email and password from frontend.
+Accepts email and password from frontend. \
 Password is hashed using a secure hashing algorithm (bcrypt) before storing in MongoDB.
 
 **Sign In**
-Validates user credentials.
-Generates a JWT (JSON Web Token) on successful login.
+Validates user credentials. \
+Generates a JWT (JSON Web Token) on successful login. \
 Stores the JWT in an HTTP-only cookie to maintain session security.
 
 **Protected Routes**
 Middleware verifies JWT token from cookies for restricted actions (e.g., adding products).
 
 ## User Data Management
-Stores basic user profile info (currently only email & hashed password).
-Fetches user details for authenticated sessions.
-Can be extended in future to store more user attributes (name, address, preferences).
+Stores basic user profile info (currently only email & hashed password). \
+Fetches user details for authenticated sessions. \
+Can be extended in future to store more user attributes (name, address, preferences). \
 
 ## Product Management
-Add Product 
-Seller can upload product details (title, description, price, category, etc.) to MongoDB.
+Add Product \
+Seller can upload product details (title, description, price, category, etc.) to MongoDB. \
 Get All Products (for displaying to users).
 
 ## Security
-Passwords are stored hashed — no plain text storage.
-JWTs stored in HTTP-only cookies to prevent XSS attacks.
-Middleware to prevent unauthorized data access.
+Passwords are stored hashed — no plain text storage. \
+JWTs stored in HTTP-only cookies to prevent XSS attacks. \
+Middleware to prevent unauthorized data access. \
 
 ## DataBase
-Stores:
-Users collection → email, hashed password, role (buyer/seller if needed in future).
+Stores: \
+Users collection → email, hashed password, role (buyer/seller if needed in future). \
 Products collection → product details, seller reference.
 
 # Technologies/Libraries/Packages Used
  ## Frontend
-   React.js
-   Css
-   React Router DOM
-   Axios
-   React Icons
+   React.js \
+   Css \ 
+   React Router DOM \
+   Axios \
+   React Icons 
 
 ## Backend
-  Node.js
-  MongoDB
-  Express.js
-  Mongoose
-  bcrypt 
-  jsonwebtoken (JWT) 
-  cookie-parser
-  dotenv
+  Node.js \
+  MongoDB \
+  Express.js \
+  Mongoose \
+  bcrypt  \
+  jsonwebtoken (JWT)  \
+  cookie-parser \
+  dotenv 
 
 # Local Setup
 
