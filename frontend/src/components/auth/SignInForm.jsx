@@ -5,7 +5,6 @@ import '../../styles/SignInForm.css'
 import Title from '../../assets/images/AppTitle3D.png'
 import { MdOutlineEmail as MailIcon } from "react-icons/md";
 import { FaLock as Lock} from "react-icons/fa";
-import {Link} from 'react-router-dom'
 import {useState} from "react";
 import { useNavigate } from 'react-router-dom';
 export default function SignIn(){
@@ -17,13 +16,13 @@ export default function SignIn(){
         try{
             const res=await fetch("http://localhost:4000/api/auth/SignIn",{
             method:"POST",
+            credentials: "include",
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify({email,password}),
             })
             const data=await res.json();
             console.log("Login response:", data);
             if(res.ok){
-                localStorage.setItem("token",data.token);
                 alert("Login Successful");
                 Navigate('/');
             }
@@ -72,7 +71,7 @@ export default function SignIn(){
                                                                         cursor: "pointer",
                                                                         }}
                                 >
-                                Registering here
+                                Sign Up
                                 </p>
                             </span>
                         </div>
