@@ -120,7 +120,10 @@ Products collection → product details, seller reference.
 - backend works on port 4000 while frontend runs on port 3000
 - npm start in the root of repo it will run frontend and backend stuff concurrently
 
-- # Team members
-- ### Nama Mithul (2024IMT-052)
-- ### Heymun Pareek (2024IMT-029)
-- ### Shubham Prasad (2024IMT-503)
+# Team members
+### Nama Mithul (2024IMT-052)
+### Heymun Pareek (2024IMT-029)
+### Shubham Prasad (2024IMT-503)
+
+# Demo Video
+ https://drive.google.com/file/d/1xK-0SdJtHsYTYtfAEAiTtkuj7uWU6csP/view?usp=sharing
